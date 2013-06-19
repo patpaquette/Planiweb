@@ -1,0 +1,6 @@
+Planiweb\ModelBundle\Entity\HumanEntityInfo:
+    properties:
+        first_name:
+            - NotBlank: ~
+        last_name:
+            - NotBlank: ~

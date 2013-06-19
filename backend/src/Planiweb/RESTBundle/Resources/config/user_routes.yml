@@ -1,0 +1,5 @@
+Planiweb_user_create:
+  pattern: /user
+  defaults: { _controller: PlaniwebRESTBundle:User:userCreate }
+  requirements:
+    _methods: POST

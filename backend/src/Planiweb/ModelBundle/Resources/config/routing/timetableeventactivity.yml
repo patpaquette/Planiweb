@@ -1,0 +1,24 @@
+timetable_event_activity:
+    pattern:  /
+    defaults: { _controller: "PlaniwebModelBundle:TimetableEventActivity:index" }
+
+timetable_event_activity_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PlaniwebModelBundle:TimetableEventActivity:show" }
+
+
+timetable_event_activity_create:
+    pattern:  /create
+    defaults: { _controller: "PlaniwebModelBundle:TimetableEventActivity:create" }
+    requirements: { _method: post }
+
+
+timetable_event_activity_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PlaniwebModelBundle:TimetableEventActivity:update" }
+    requirements: { _method: post|put }
+
+timetable_event_activity_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PlaniwebModelBundle:TimetableEventActivity:delete" }
+    requirements: { _method: post|delete }

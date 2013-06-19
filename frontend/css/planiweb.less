@@ -1,0 +1,261 @@
+//layout types + general stuff
+body{
+  font: tahoma;
+}
+
+.oneColumn {
+}
+
+.twoColumns (@firstColWidth: 50%) {
+  .firstElement{
+    width: @firstColWidth;
+    float: left;
+  }
+  .secondElement{
+    width: 100-@firstColWidth;
+    float: right;
+  }
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formRow{
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 5px;
+
+  .left{
+    float: left;
+  }
+
+  .right{
+    float: right;
+  }
+}
+
+
+.formSubmitButton{
+  float: right;
+  margin-top: 5px;
+}
+
+.show-true{
+}
+
+.show-false{
+  visibility: hidden;
+}
+
+//views
+#page-add_student
+{
+  background-image: url('../img/dossiereleve_background.jpg');
+}
+#page-main
+{
+  background-image: url('../img/cahiernote1_background.jpg');
+  background-size: 100%;
+}
+#page-login
+{
+  background-image: url('../img/acceuilecole1_Background.jpg');
+  background-size: 100%;
+}
+#page-personal_comments
+{
+  background-image: url('../img/cahiernote1_background.jpg');
+  background-size: 100%;
+}
+#page-account_create
+{
+  background-image: url('../img/acceuilecole1_Background.jpg');
+  background-size: 100%;
+}
+
+#loginView{
+  width: 25%;
+  margin-top: 10%;
+  #linkToAccountCreate{
+    float: right;
+  }
+  .center;
+  .formLabel{
+    color: white;
+  }
+  
+}
+
+#newAccountView{
+  width: 25%;
+  margin-top: 10%;
+  .center;
+
+  .error{
+    float: left;
+    color: red;
+  }
+  .formLabel{
+    color: white;
+  }
+}
+
+#studentAddForm{
+  margin-top: 10%;
+  width: 70%;
+  .center;
+  
+
+  .formLabel{
+    color: white;
+  }
+  #submit{
+    //float: right;
+    margin-top: 5px;
+  }
+
+  #studentAddFormLayout{
+    .twoColumns(50%);
+  }
+
+  .formRow{
+    .left{
+      margin-left: 30px;
+    }
+    .right{
+      margin-right: 30px;
+    }
+  }
+
+  #submit{
+    width: 175px;
+    height: 70px;
+    margin-right: 25px;
+    background-color: rgba(200, 200, 200, 0.6);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    &:hover{
+      background-color: rgba(200, 200, 200, 1);
+    }
+  }
+}
+
+#mainView{
+  margin-top: 8%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+#mainCalendar{
+  .twoColumns(100%);
+  opacity: 0.9;
+}
+
+#commentsCalendar{
+  .twoColumns(60%);
+  opacity: 0.9;
+  height: 400px;
+}
+
+#personalCommentsView
+{
+  margin-top: 8%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  #personalCommentForm{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    //border-style: solid;
+    //border-width: 1px;
+    overflow: hidden;
+    padding: 5px 5px 5px 5px;
+
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
+    textarea{
+      background-image: url('../img/chalkboard_blackTextbox.jpg');
+      background-size: 100% 100%;
+
+      color: white;
+      padding: 12px;  
+    }
+
+    select{
+      width: 70%;
+      float: left;
+    }
+
+    #submit{
+      float: right;
+    }
+  }
+
+  #personalCommentsList{
+    width: 64%;
+    height: 490px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 35px 15px 15px 15px;
+    color: white;
+    background: url('../img/chalkboard_blackTextbox.jpg');
+    background-size: 100% 100%;
+    background-color: black;
+
+    .personalComment{
+      margin-bottom: 10px;
+
+      .text{
+        margin-bottom: 5px;
+      }
+
+      .seperation{
+        text-align: center;      
+        margin-top: 5px;
+      }
+    }
+  }
+
+}
+
+
+#main_menu{
+  overflow: hidden;
+
+  .menu_item{
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+    color: white;
+  }
+}
+
+
+
+
+//general classes
+.boxsizingBorder {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//elements overrides
+textarea
+{
+  border:1px solid #999999;
+  width:100%;
+  margin:5px 0;
+  padding:3px;
+
+  .boxsizingBorder
+}

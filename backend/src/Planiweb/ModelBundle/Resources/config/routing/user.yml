@@ -1,0 +1,22 @@
+user:
+    pattern:  /
+    defaults: { _controller: "PlaniwebModelBundle:User:index" }
+
+user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PlaniwebModelBundle:User:show" }
+
+user_create:
+    pattern:  /create
+    defaults: { _controller: "PlaniwebModelBundle:User:create" }
+    requirements: { _method: post }
+
+user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PlaniwebModelBundle:User:update" }
+    requirements: { _method: post|put }
+
+user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PlaniwebModelBundle:User:delete" }
+    requirements: { _method: post|delete }

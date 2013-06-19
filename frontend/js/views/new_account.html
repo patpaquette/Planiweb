@@ -1,0 +1,23 @@
+<div id="newAccountView">
+  <form id="newAccountForm" ng-submit="submit()" ng-controller="newAccountCtrl">
+  	<div class="formRow">
+  		<div class="left formLabel">Nom d'utilisateur</div>
+  		<div class="right"><input type="text" ng-model="account.username"></div>
+
+  	</div>
+  	<div class="formRow">
+  		<div class="left formLabel">Mot de passe</div>
+  		<div class="right"><input type="password" ng-model="account.password"></div>
+  	</div>
+  	<div class="formRow">
+  		<div class="left formLabel">Nom</div>
+  		<div class="right"><input type="text" ng-model="account.lastname"></div>
+  	</div>
+  	<div class="formRow">
+  		<div class="left formLabel">Pr&eacute;nom</div>
+  		<div class="right"><input type="text" ng-model="account.firstname"></div>
+  	</div>
+    <div class="error">{{usernameTakenErrorMsg}}</div>
+    <div class="formSubmitButton"><input type="submit" value="Cr&eacute;er compte"></div>
+  </form>
+</div>

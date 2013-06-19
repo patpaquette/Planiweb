@@ -1,0 +1,50 @@
+PlaniwebRESTBundle_students_add:
+  pattern: /student
+  defaults: { _controller: PlaniwebRESTBundle:HEntities:studentAdd }
+  requirements:
+    _method: POST
+
+PlaniwebRESTBundle_students_getAll:
+  pattern: /student
+  defaults: { _controller: PlaniwebRESTBundle:HEntities:studentsGetAll }
+  requirements:
+    _method: GET
+
+PlaniwebRESTBundle_students_get:
+  pattern: /student/{id}
+  defaults: { _controller: PlaniwebRESTBundle:HEntities:studentsGet }
+  requirements:
+    _method: GET
+
+PlaniwebRESTBundle_user_comment_add:
+  pattern: /user/comment
+  defaults: { _controller: PlaniwebRESTBundle:HEntities:teacherCommentAdd }
+  requirements:
+    _method: POST
+
+PlaniwebRESTBundle_user_comment_get:
+  pattern: /user/comment
+  defaults: { _controller: PlaniwebRESTBundle:HEntities:teacherCommentGet }
+  requirements:  
+    _method: GET
+
+
+PlaniwebRESTBundle_account_create:
+  pattern: /account/create
+  defaults: { _controller: PlaniwebRESTBundle:Security:createAccount }
+
+PlaniwebRESTBundle_account_logout:
+  pattern: /account/logout
+  defaults: { _controller: PlaniwebRESTBundle:Security:logout }
+
+PlaniwebRESTServicesbundle_isLogged:
+  pattern: /user/logged
+  defaults: { _controller: PlaniwebRESTBundle:Security:isLogged }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: PlaniwebRESTBundle:Security:login }
+
+
+PlaniwebUserRoutes:
+  resource: "@PlaniwebRESTBundle/Resources/config/user_routes.yml"

@@ -1,0 +1,23 @@
+PlaniwebModelbundle_user:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/user.yml"
+    prefix: /user
+
+PlaniwebModelBundle_student:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/student.yml"
+    prefix:   /student
+
+PlaniwebModelBundle_ctudent:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/course.yml"
+    prefix:   /course
+
+PlaniwebModelBundle_course_activity:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/courseactivity.yml"
+    prefix:   /course_activity
+
+PlaniwebModelBundle_timetable_event:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/timetableevent.yml"
+    prefix:   /timetable_event
+
+PlaniwebModelBundle_timetable_event_activity:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/timetableeventactivity.yml"
+    prefix:   /timetable_event_activity

@@ -1,0 +1,7 @@
+planiweb_model:
+    resource: "@PlaniwebModelBundle/Resources/config/routing.yml"
+    prefix:   /
+
+PlaniwebRESTBundle:
+    resource: "@PlaniwebRESTBundle/Resources/config/routing.yml"
+    prefix:   /

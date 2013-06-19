@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/config/routing_dev.yml'

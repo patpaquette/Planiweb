@@ -1,0 +1,11 @@
+Planiweb\ModelBundle\Entity\TimetableEvent:
+    properties:
+        course:
+            - Valid: ~
+        start_time:
+            - DateTime: ~
+        end_time:
+            - DateTime: ~
+        day:
+            - Type:
+                type: integer

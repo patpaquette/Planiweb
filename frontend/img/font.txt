@@ -1,0 +1,1 @@
+le font pour les label et textbox est: Tahoma 

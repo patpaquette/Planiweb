@@ -1,0 +1,6 @@
+Planiweb\ModelBundle\Entity\CourseActivity:
+    properties:
+        course:
+            - Valid: ~
+        name:
+            - NotBlank: ~

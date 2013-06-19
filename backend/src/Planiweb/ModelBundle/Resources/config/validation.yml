@@ -1,0 +1,2 @@
+PlaniwebModelBundle_HumanEntityInfo:
+    resource: "@PlaniwebModelBundle/Resources/config/validation/HumanEntityInfo.yml"

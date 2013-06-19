@@ -1,0 +1,29 @@
+<div id="personalCommentsView" ng-controller="personalCommentsViewCtrl">
+  <div id="commentsCalendar">
+    <div class="firstElement">
+
+      <div full-calendar-scholar-week id="main-calendar" events="events" width="100%"></div>
+    </div>
+  <div class="secondElement">
+      <div>
+        <form ng-submit="submit()" id="personalCommentForm" ng-controller="personalCommentFormCtrl">
+
+          <textarea rows="6" cols="20" ng-model="newComment.text" />
+          <div>
+            <select ng-model="chosenStudent" ng-options="student.first_name + ' ' + student.last_name for student in students">
+            </select>
+          </div>
+          <input type="submit" id="submit" value="Ajouter" />
+        </form>
+      </div>
+
+      <div id="personalCommentsList" ng-controller="personalCommentsCtrl">
+        <div class="personalComment" ng-repeat="comment in comments">
+          <div class="text">{{comment.text}}</div>
+          <div>&Eacute;tudiant : {{comment.student.first_name}} {{comment.student.last_name}}</div>
+          <div class="seperation">-</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

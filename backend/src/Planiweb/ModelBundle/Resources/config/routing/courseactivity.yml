@@ -1,0 +1,24 @@
+course_activity:
+    pattern:  /
+    defaults: { _controller: "PlaniwebModelBundle:CourseActivity:index" }
+
+course_activity_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PlaniwebModelBundle:CourseActivity:show" }
+
+
+course_activity_create:
+    pattern:  /create
+    defaults: { _controller: "PlaniwebModelBundle:CourseActivity:create" }
+    requirements: { _method: post }
+
+
+course_activity_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PlaniwebModelBundle:CourseActivity:update" }
+    requirements: { _method: post|put }
+
+course_activity_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PlaniwebModelBundle:CourseActivity:delete" }
+    requirements: { _method: post|delete }

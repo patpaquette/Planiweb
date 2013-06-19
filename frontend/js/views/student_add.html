@@ -1,0 +1,58 @@
+<form ng-submit="submit()" ng-controller="studentAddFormCtrl" id="studentAddForm">
+	<div id="studentAddFormLayout">
+		<div class="firstElement">
+			<div class="formRow">
+				<div class="formLabel left">Pr&eacute;nom</div>
+				<div class="right"><input type="text" ng-model="student.lastName"></div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel left">Nom</div>
+				<div class="right"><input type="text" ng-model="student.firstName"></div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel left">Sexe</div>
+				<div class="right">
+					<div style="margin-right: 10px;float:left;">
+						Male
+						<input type="radio" ng-model="student.sex" value="m">
+					</div>
+					<div style="float:right">
+						Femelle
+						<input type="radio" ng-model="student.sex" value="f">
+					</div>
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel left">Date de naissance</div>
+				<div class="right">
+					<div ng-model="student.birthdate" ui-date="dateOptions" regional="fr"></div>
+				</div>
+			</div>
+		</div>
+		<div class="secondElement">
+			<div class="formRow">
+				<div class="formLabel left">Adresse &eacute;lectronique</div>
+				<div class="right"><input type="text" ng-model="student.email"></div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel left">Num&eacute;ro de t&eacute;l&eacute;phone</div>
+				<div class="right"><input type="text" ng-model="student.telephoneNumber"></div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel left">Nom du p&egrave;re</div>
+				<div class="right"><input type="text" ng-model="student.fatherName"></div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel left">Nom de la m&egrave;re</div>
+				<div class="right"><input type="text" ng-model="student.motherName"></div>
+			</div>
+
+			<div class="formSubmitButton">
+		  		<input type="submit" id="submit" value="Ajouter">
+		  	</div>
+		</div>
+
+		<div style="clear:both;"></div>
+	</div>
+	
+</form>

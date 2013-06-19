@@ -1,0 +1,5 @@
+Planiweb\ModelBundle\Entity\Student:
+    properties:
+        info:
+            - Valid: ~
+            - NotNull: ~

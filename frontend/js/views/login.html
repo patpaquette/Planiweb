@@ -1,0 +1,19 @@
+<div id="loginView">
+	<form id="loginForm" ng-submit="submit()" ng-controller="loginCtrl">
+		<div class="formRow">
+			<div class="left formLabel">Nom d'utilisateur</div>
+			<div class="right"><input type="text" ng-model="login.username"></div>
+		</div>
+		<div class="formRow">
+			<div class="left formLabel">Mot de passe</div>
+			<div class="right"><input type="password" ng-model="login.password"></div>
+		</div>
+		<div class="formRow">
+			
+			<input class="formSubmitButton" type="submit" value="Acc&eacute;der">
+		</div>
+		<div class="formRow">
+			<a href="" ng-click="redirect(views.account_create)" class="formLabel right" id="linkToAcountCreate">Cr&eacute;er nouveau compte</a>
+		</div>
+	</form>
+</div>

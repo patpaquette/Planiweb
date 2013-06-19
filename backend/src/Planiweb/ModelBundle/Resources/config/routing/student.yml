@@ -1,0 +1,24 @@
+student:
+    pattern:  /
+    defaults: { _controller: "PlaniwebModelBundle:Student:index" }
+
+student_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PlaniwebModelBundle:Student:show" }
+
+
+student_create:
+    pattern:  /create
+    defaults: { _controller: "PlaniwebModelBundle:Student:create" }
+    requirements: { _method: post }
+
+
+student_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PlaniwebModelBundle:Student:update" }
+    requirements: { _method: post|put }
+
+student_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PlaniwebModelBundle:Student:delete" }
+    requirements: { _method: post|delete }

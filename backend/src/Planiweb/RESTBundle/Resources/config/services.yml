@@ -1,0 +1,7 @@
+parameters:
+#    planiweb_rest_services.example.class: Planiweb\RESTBundle\Example
+
+services:
+#    planiweb_rest_services.example:
+#        class: %planiweb_rest_services.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

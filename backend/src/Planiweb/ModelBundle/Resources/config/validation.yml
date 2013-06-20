@@ -1,2 +1,98 @@
-PlaniwebModelBundle_HumanEntityInfo:
-    resource: "@PlaniwebModelBundle/Resources/config/validation/HumanEntityInfo.yml"
+Planiweb\ModelBundle\Entity\Course:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
+    properties:
+        name:
+            - NotBlank: ~
+
+Planiweb\ModelBundle\Entity\CourseActivity:
+    properties:
+        course:
+            - Valid: ~
+        name:
+            - NotBlank: ~
+
+Planiweb\ModelBundle\Entity\HumanEntityInfo:
+    properties:
+        first_name:
+            - NotBlank: ~
+        last_name:
+            - NotBlank: ~
+
+Planiweb\ModelBundle\Entity\Student:
+    properties:
+        info:
+            - Valid: ~
+            - NotNull: ~
+
+Planiweb\ModelBundle\Entity\TimetableEvent:
+    properties:
+        course:
+            - Valid: ~
+        start_time:
+            - NotBlank: ~
+            - DateTime: ~
+        end_time:
+            - NotBlank: ~
+            - DateTime: ~
+        day:
+            - Type:
+                type: integer
+
+Planiweb\ModelBundle\Entity\TimetableEventActivity:
+    properties:
+        activity:
+            - Valid: ~
+        start_time:
+            - NotBlank: ~
+            - DateTime: ~
+        end_time:
+            - NotBlank: ~
+            - DateTime: ~
+        timetable_event:
+            - Valid: ~
+
+Planiweb\ModelBundle\Entity\TimetableEventInstance:
+    properties:
+        timetable_event:
+            - Valid: ~
+        date:
+            - NotBlank: ~
+            - DateTime: ~
+
+Planiweb\ModelBundle\Entity\TimetableEventInstanceActivity:
+    properties:
+        activity:
+            - Valid: ~
+        start_time:
+            - NotBlank: ~
+            - DateTime: ~
+        end_time:
+            - NotBlank: ~
+            - DateTime: ~
+        timetable_event_instance:
+            - Valid: ~
+
+
+Planiweb\ModelBundle\Entity\UserComment:
+    properties:
+        context:
+            - Valid: ~
+        text:
+            - NotNull: ~
+        date:
+            - NotBlank: ~
+            - DateTime: ~
+        user:
+            - Valid: ~
+        students:
+            - Valid: ~
+
+Planiweb\ModelBundle\Entity\UserCommentContext:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: context
+    properties:
+        user:
+            - Valid: ~
+        context:
+            - NotBlank: ~

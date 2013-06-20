@@ -30,6 +30,7 @@ class UserControllerTest extends Tests\ModelTestCase
             $userData
         );
 
+        echo $response->getContent();
         $userId = json_decode($response->getContent(), true)["id"];
         $this->assertEquals('200', $response->getStatusCode());
         

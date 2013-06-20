@@ -10,11 +10,21 @@ class TimetableEventControllerTest extends Tests\ModelTestCase
 
     public function testCompleteScenario()
     {
+        $em = $this->getDoctrine();
+
+        $course = $em->getRepository("PlaniwebModelBundle:Course")->findOneBy(array("name" => $this->getContainer()->getParameter("PlaniwebModelBundle.Testing.DefaultValues.String")));
+
         //fill with entity data
-        $entityData = array();
+        $entityData = array(
+            "course" => $course,
+            "start_time" => $this->getContainer()->getParameter("PlaniwebModelBundle.Testing.DefaultValues.DateTime"),
+            "end_time" => $this->getContainer()->getParameter("PlaniwebModelBundle.Testing.DefaultValues.DateTime"),
+            "day" => $this->getContainer()->getParameter("PlaniwebModelBundle.Testing.DefaultValues.String"),
+        );
 
         //fill with updated entity data
-        $updatedEntityData = array();
+        $updatedEntityData = $entityData;
+        $updatedEntityData["day"]++;
 
         //resource name used in urls
         $resourceName = "timetable_event";

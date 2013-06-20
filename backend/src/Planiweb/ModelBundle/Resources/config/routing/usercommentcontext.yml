@@ -1,0 +1,24 @@
+user_comment_context:
+    pattern:  /
+    defaults: { _controller: "PlaniwebModelBundle:UserCommentContext:index" }
+
+user_comment_context_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PlaniwebModelBundle:UserCommentContext:show" }
+
+
+user_comment_context_create:
+    pattern:  /create
+    defaults: { _controller: "PlaniwebModelBundle:UserCommentContext:create" }
+    requirements: { _method: post }
+
+
+user_comment_context_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PlaniwebModelBundle:UserCommentContext:update" }
+    requirements: { _method: post|put }
+
+user_comment_context_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PlaniwebModelBundle:UserCommentContext:delete" }
+    requirements: { _method: post|delete }

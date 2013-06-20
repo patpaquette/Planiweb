@@ -22,9 +22,16 @@ class UserCommentContext
     protected $id;
 
     /**
+     * @var Planiweb\ModelBundle\Entity\User $user
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     */
+    protected $user;
+
+    /**
      * @var string $context
      * 
-     * @ORM\Column(length=255)
+     * @ORM\Column(length=255, unique=true)
      */
     protected $context;
 
@@ -36,6 +43,26 @@ class UserCommentContext
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get User
+     *
+     * @return Planiweb\ModelBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set User
+     *
+     * @param Planiweb\ModelBundle\Entity\User $user
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
     }
 
     /**

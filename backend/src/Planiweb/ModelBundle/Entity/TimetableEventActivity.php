@@ -43,12 +43,12 @@ class TimetableEventActivity
     protected $end_time;
 
     /**
-     * @var Planiweb\ModelBundle\Entity\TimetableEvent $timetableEvent
+     * @var Planiweb\ModelBundle\Entity\TimetableEvent $timetable_event
      *
      * @ORM\ManyToOne(targetEntity="TimetableEvent")
      */
-
     protected $timetable_event;
+    
     /**
      * Get id
      *

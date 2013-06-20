@@ -46,8 +46,19 @@ class ModelTestCase extends Test\WebTestCase
 
         $this->runConsole("doctrine:schema:drop", array("--force" => true));
         $this->runConsole("doctrine:schema:create");
-        $this->runConsole("doctrine:fixtures:load", array("--fixtures" => __DIR__ . "/../DataFixtures/ORM"));
-        $this->runConsole("doctrine:fixtures:load", array("--fixtures" => __DIR__ . "/DataFixtures/ORM"));
+        $this->runConsole(
+            "doctrine:fixtures:load", 
+            array(
+                "--fixtures" => __DIR__ . "/../" . $this->getContainer()->getParameter('PlaniwebModelBundle.DataFixtures.Path')
+            )
+        );
+        $this->runConsole(
+            "doctrine:fixtures:load", 
+            array(
+                "--append" => null,
+                "--fixtures" => __DIR__ . "/../" . $this->getContainer()->getParameter('PlaniwebModelBundle.Testing.DataFixtures.Path')
+            )
+        );
 
         return $client;
     }

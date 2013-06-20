@@ -39,6 +39,7 @@ class TimetableEventActivityController extends ModelController
      */
     public function createAction(Request $request)
     {
+        echo $request->getContent();
         $entity = $this->deserialize($request->getContent(), "Planiweb\ModelBundle\Entity\TimetableEventActivity");
 
         $errors = $this->validate($entity);

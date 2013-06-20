@@ -3,10 +3,11 @@
 namespace Planiweb\ModelBundle\Tests\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Planiweb\ModelBundle\Entity\Course;
 
-class LoadCourseTestData implements FixtureInterface
+class LoadCourseTestData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {

@@ -21,3 +21,19 @@ PlaniwebModelBundle_timetable_event:
 PlaniwebModelBundle_timetable_event_activity:
     resource: "@PlaniwebModelBundle/Resources/config/routing/timetableeventactivity.yml"
     prefix:   /timetable_event_activity
+
+PlaniwebModelBundle_timetable_event_instance:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/timetableeventinstance.yml"
+    prefix:   /timetable_event_instance
+
+PlaniwebModelBundle_timetable_event_instance_activity:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/timetableeventinstanceactivity.yml"
+    prefix:   /timetable_event_instance_activity
+
+PlaniwebModelBundle_user_comment:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/usercomment.yml"
+    prefix:   /user_comment
+
+PlaniwebModelBundle_user_comment_context:
+    resource: "@PlaniwebModelBundle/Resources/config/routing/usercommentcontext.yml"
+    prefix:   /user_comment_context

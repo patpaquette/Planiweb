@@ -381,6 +381,259 @@ class appTestUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
             not_timetable_event_delete:
 
+            if (0 === strpos($pathinfo, '/timetable_event_')) {
+                if (0 === strpos($pathinfo, '/timetable_event_activity')) {
+                    // timetable_event_activity
+                    if (rtrim($pathinfo, '/') === '/timetable_event_activity') {
+                        if (substr($pathinfo, -1) !== '/') {
+                            return $this->redirect($pathinfo.'/', 'timetable_event_activity');
+                        }
+
+                        return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventActivityController::indexAction',  '_route' => 'timetable_event_activity',);
+                    }
+
+                    // timetable_event_activity_show
+                    if (preg_match('#^/timetable_event_activity/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_activity_show')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventActivityController::showAction',));
+                    }
+
+                    // timetable_event_activity_create
+                    if ($pathinfo === '/timetable_event_activity/create') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_timetable_event_activity_create;
+                        }
+
+                        return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventActivityController::createAction',  '_route' => 'timetable_event_activity_create',);
+                    }
+                    not_timetable_event_activity_create:
+
+                    // timetable_event_activity_update
+                    if (preg_match('#^/timetable_event_activity/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                            $allow = array_merge($allow, array('POST', 'PUT'));
+                            goto not_timetable_event_activity_update;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_activity_update')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventActivityController::updateAction',));
+                    }
+                    not_timetable_event_activity_update:
+
+                    // timetable_event_activity_delete
+                    if (preg_match('#^/timetable_event_activity/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                            $allow = array_merge($allow, array('POST', 'DELETE'));
+                            goto not_timetable_event_activity_delete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_activity_delete')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventActivityController::deleteAction',));
+                    }
+                    not_timetable_event_activity_delete:
+
+                }
+
+                if (0 === strpos($pathinfo, '/timetable_event_instance')) {
+                    // timetable_event_instance
+                    if (rtrim($pathinfo, '/') === '/timetable_event_instance') {
+                        if (substr($pathinfo, -1) !== '/') {
+                            return $this->redirect($pathinfo.'/', 'timetable_event_instance');
+                        }
+
+                        return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceController::indexAction',  '_route' => 'timetable_event_instance',);
+                    }
+
+                    // timetable_event_instance_show
+                    if (preg_match('#^/timetable_event_instance/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_instance_show')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceController::showAction',));
+                    }
+
+                    // timetable_event_instance_create
+                    if ($pathinfo === '/timetable_event_instance/create') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_timetable_event_instance_create;
+                        }
+
+                        return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceController::createAction',  '_route' => 'timetable_event_instance_create',);
+                    }
+                    not_timetable_event_instance_create:
+
+                    // timetable_event_instance_update
+                    if (preg_match('#^/timetable_event_instance/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                            $allow = array_merge($allow, array('POST', 'PUT'));
+                            goto not_timetable_event_instance_update;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_instance_update')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceController::updateAction',));
+                    }
+                    not_timetable_event_instance_update:
+
+                    // timetable_event_instance_delete
+                    if (preg_match('#^/timetable_event_instance/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                            $allow = array_merge($allow, array('POST', 'DELETE'));
+                            goto not_timetable_event_instance_delete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_instance_delete')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceController::deleteAction',));
+                    }
+                    not_timetable_event_instance_delete:
+
+                    if (0 === strpos($pathinfo, '/timetable_event_instance_activity')) {
+                        // timetable_event_instance_activity
+                        if (rtrim($pathinfo, '/') === '/timetable_event_instance_activity') {
+                            if (substr($pathinfo, -1) !== '/') {
+                                return $this->redirect($pathinfo.'/', 'timetable_event_instance_activity');
+                            }
+
+                            return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceActivityController::indexAction',  '_route' => 'timetable_event_instance_activity',);
+                        }
+
+                        // timetable_event_instance_activity_show
+                        if (preg_match('#^/timetable_event_instance_activity/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_instance_activity_show')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceActivityController::showAction',));
+                        }
+
+                        // timetable_event_instance_activity_create
+                        if ($pathinfo === '/timetable_event_instance_activity/create') {
+                            if ($this->context->getMethod() != 'POST') {
+                                $allow[] = 'POST';
+                                goto not_timetable_event_instance_activity_create;
+                            }
+
+                            return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceActivityController::createAction',  '_route' => 'timetable_event_instance_activity_create',);
+                        }
+                        not_timetable_event_instance_activity_create:
+
+                        // timetable_event_instance_activity_update
+                        if (preg_match('#^/timetable_event_instance_activity/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                            if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                                $allow = array_merge($allow, array('POST', 'PUT'));
+                                goto not_timetable_event_instance_activity_update;
+                            }
+
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_instance_activity_update')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceActivityController::updateAction',));
+                        }
+                        not_timetable_event_instance_activity_update:
+
+                        // timetable_event_instance_activity_delete
+                        if (preg_match('#^/timetable_event_instance_activity/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                            if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                                $allow = array_merge($allow, array('POST', 'DELETE'));
+                                goto not_timetable_event_instance_activity_delete;
+                            }
+
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'timetable_event_instance_activity_delete')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\TimetableEventInstanceActivityController::deleteAction',));
+                        }
+                        not_timetable_event_instance_activity_delete:
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/user_comment')) {
+            // user_comment
+            if (rtrim($pathinfo, '/') === '/user_comment') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'user_comment');
+                }
+
+                return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentController::indexAction',  '_route' => 'user_comment',);
+            }
+
+            // user_comment_show
+            if (preg_match('#^/user_comment/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_comment_show')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentController::showAction',));
+            }
+
+            // user_comment_create
+            if ($pathinfo === '/user_comment/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_user_comment_create;
+                }
+
+                return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentController::createAction',  '_route' => 'user_comment_create',);
+            }
+            not_user_comment_create:
+
+            // user_comment_update
+            if (preg_match('#^/user_comment/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_user_comment_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_comment_update')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentController::updateAction',));
+            }
+            not_user_comment_update:
+
+            // user_comment_delete
+            if (preg_match('#^/user_comment/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_user_comment_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_comment_delete')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentController::deleteAction',));
+            }
+            not_user_comment_delete:
+
+            if (0 === strpos($pathinfo, '/user_comment_context')) {
+                // user_comment_context
+                if (rtrim($pathinfo, '/') === '/user_comment_context') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'user_comment_context');
+                    }
+
+                    return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentContextController::indexAction',  '_route' => 'user_comment_context',);
+                }
+
+                // user_comment_context_show
+                if (preg_match('#^/user_comment_context/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_comment_context_show')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentContextController::showAction',));
+                }
+
+                // user_comment_context_create
+                if ($pathinfo === '/user_comment_context/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_user_comment_context_create;
+                    }
+
+                    return array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentContextController::createAction',  '_route' => 'user_comment_context_create',);
+                }
+                not_user_comment_context_create:
+
+                // user_comment_context_update
+                if (preg_match('#^/user_comment_context/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_user_comment_context_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_comment_context_update')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentContextController::updateAction',));
+                }
+                not_user_comment_context_update:
+
+                // user_comment_context_delete
+                if (preg_match('#^/user_comment_context/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_user_comment_context_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_comment_context_delete')), array (  '_controller' => 'Planiweb\\ModelBundle\\Controller\\UserCommentContextController::deleteAction',));
+                }
+                not_user_comment_context_delete:
+
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/student')) {

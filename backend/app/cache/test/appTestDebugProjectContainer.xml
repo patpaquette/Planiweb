@@ -40,6 +40,12 @@
     <parameter key="locale">en</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="security.authentication.success_handler.class">Planiweb\RESTBundle\Services\Security\Http\Authentication\AuthenticationSuccessHandler</parameter>
+    <parameter key="planiwebmodelbundle.datafixtures.path">DataFixtures/ORM</parameter>
+    <parameter key="planiwebmodelbundle.testing.datafixtures.path">Tests/DataFixtures/ORM</parameter>
+    <parameter key="planiwebmodelbundle.testing.defaultvalues.string">test</parameter>
+    <parameter key="planiwebmodelbundle.testing.defaultvalues.integer">0</parameter>
+    <parameter key="planiwebmodelbundle.testing.defaultvalues.datetime">1987-05-08T00:00:00O</parameter>
+    <parameter key="planiwebmodelbundle.testing.datafixtures.defaultvalues.string">fixture_test</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -165,11 +171,7 @@
       <parameter>/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</parameter>
     </parameter>
     <parameter key="validator.mapping.loader.yaml_files_loader.mapping_files" type="collection">
-      <parameter>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/HumanEntityInfo.yml</parameter>
-      <parameter>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Student.yml</parameter>
-      <parameter>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Course.yml</parameter>
-      <parameter>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/CourseActivity.yml</parameter>
-      <parameter>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/TimetableEvent.yml</parameter>
+      <parameter>/Volumes/Macintosh HD/Sites/Planiweb/backend/src/Planiweb/ModelBundle/Resources/config/validation.yml</parameter>
     </parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="fragment.listener.class">Symfony\Component\HttpKernel\EventListener\FragmentListener</parameter>
@@ -1349,11 +1351,7 @@
             <argument type="service">
               <service class="Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader" public="false">
                 <argument type="collection">
-                  <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/HumanEntityInfo.yml</argument>
-                  <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Student.yml</argument>
-                  <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Course.yml</argument>
-                  <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/CourseActivity.yml</argument>
-                  <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/TimetableEvent.yml</argument>
+                  <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/src/Planiweb/ModelBundle/Resources/config/validation.yml</argument>
                 </argument>
               </service>
             </argument>
@@ -2881,6 +2879,10 @@
       <call method="addPath">
         <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/app/Resources/TwigBundle/views</argument>
+        <argument>Twig</argument>
       </call>
       <call method="addPath">
         <argument>/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>

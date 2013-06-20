@@ -22,11 +22,19 @@ class TimetableEventInstance
     protected $id;
 
     /**
-     * @var Planiweb\ModelBundle\Entity\TimetableEvent $timetableEvent
+     * @var Planiweb\ModelBundle\Entity\TimetableEvent $timetable_event
      *
      * @ORM\ManyToOne(targetEntity="TimetableEvent")
      */
-    protected $timetableEvent;
+    protected $timetable_event;
+
+    /**
+     * @var datetime $date
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $date;
+
 
     /**
      * Get id
@@ -39,44 +47,24 @@ class TimetableEventInstance
     }
 
     /**
-     * Set period
+     * Get date
      *
-     * @param Planiweb\ModelBundle\Entity\Period $period
+     * @return datetime
      */
-    public function setPeriod(\Planiweb\ModelBundle\Entity\Period $period)
+    public function getDate()
     {
-        $this->period = $period;
+        return $this->date;
     }
 
     /**
-     * Get period
-     *
-     * @return Planiweb\ModelBundle\Entity\Period 
-     */
-    public function getPeriod()
+     * Set date
+     * @param datetime $date
+     */ 
+    public function setDate($date)
     {
-        return $this->period;
+        $this->date = $date;
     }
 
-    /**
-     * Set event
-     *
-     * @param Planiweb\ModelBundle\Entity\Event $event
-     */
-    public function setEvent(\Planiweb\ModelBundle\Entity\Event $event)
-    {
-        $this->event = $event;
-    }
-
-    /**
-     * Get event
-     *
-     * @return Planiweb\ModelBundle\Entity\Event 
-     */
-    public function getEvent()
-    {
-        return $this->event;
-    }
 
     /**
      * Set timetableEvent

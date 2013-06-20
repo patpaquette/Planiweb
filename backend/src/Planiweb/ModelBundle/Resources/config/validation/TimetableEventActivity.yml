@@ -1,0 +1,10 @@
+Planiweb\ModelBundle\Entity\TimetableEventActivity:
+    properties:
+        activity:
+            - Valid: ~
+        start_time:
+            - DateTime: ~
+        end_time:
+            - DateTime: ~
+        timetable_event:
+            - Valid: ~

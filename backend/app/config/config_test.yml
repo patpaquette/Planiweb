@@ -20,3 +20,11 @@ services:
     DbTestServices:
         class: Planiweb\RESTBundle\Tests\Services\DbTestServices
         arguments: ['@DbServices', '@doctrine.orm.entity_manager']
+
+parameters:
+    PlaniwebModelBundle.DataFixtures.Path: DataFixtures/ORM
+    PlaniwebModelBundle.Testing.DataFixtures.Path: Tests/DataFixtures/ORM
+    PlaniwebModelBundle.Testing.DefaultValues.String: "test"
+    PlaniwebModelBundle.Testing.DefaultValues.Integer: 0
+    PlaniwebModelBundle.Testing.DefaultValues.DateTime: "1987-05-08T00:00:00O"
+    PlaniwebModelBundle.Testing.DataFixtures.DefaultValues.String: "fixture_test"

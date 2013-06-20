@@ -3288,6 +3288,7 @@ class appTestDebugProjectContainer extends Container
 
         $instance->addPath('/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views', 'Framework');
         $instance->addPath('/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views', 'Security');
+        $instance->addPath('/Volumes/Macintosh HD/Sites/Planiweb/backend/app/Resources/TwigBundle/views', 'Twig');
         $instance->addPath('/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views', 'Twig');
         $instance->addPath('/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/swiftmailer-bundle/Symfony/Bundle/SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views', 'Doctrine');
@@ -3729,7 +3730,7 @@ class appTestDebugProjectContainer extends Container
      */
     protected function getValidator_Mapping_ClassMetadataFactoryService()
     {
-        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array(0 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/HumanEntityInfo.yml', 1 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Student.yml', 2 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Course.yml', 3 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/CourseActivity.yml', 4 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/TimetableEvent.yml')))), NULL);
+        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array(0 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/src/Planiweb/ModelBundle/Resources/config/validation.yml')))), NULL);
     }
 
     /**
@@ -3822,6 +3823,12 @@ class appTestDebugProjectContainer extends Container
             'locale' => 'en',
             'secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'security.authentication.success_handler.class' => 'Planiweb\\RESTBundle\\Services\\Security\\Http\\Authentication\\AuthenticationSuccessHandler',
+            'planiwebmodelbundle.datafixtures.path' => 'DataFixtures/ORM',
+            'planiwebmodelbundle.testing.datafixtures.path' => 'Tests/DataFixtures/ORM',
+            'planiwebmodelbundle.testing.defaultvalues.string' => 'test',
+            'planiwebmodelbundle.testing.defaultvalues.integer' => 0,
+            'planiwebmodelbundle.testing.defaultvalues.datetime' => '1987-05-08T00:00:00O',
+            'planiwebmodelbundle.testing.datafixtures.defaultvalues.string' => 'fixture_test',
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
             'response_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ResponseListener',
@@ -3953,11 +3960,7 @@ class appTestDebugProjectContainer extends Container
                 0 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml',
             ),
             'validator.mapping.loader.yaml_files_loader.mapping_files' => array(
-                0 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/HumanEntityInfo.yml',
-                1 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Student.yml',
-                2 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/Course.yml',
-                3 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/CourseActivity.yml',
-                4 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/app/../src/Planiweb/ModelBundle/Resources/config/validation/TimetableEvent.yml',
+                0 => '/Volumes/Macintosh HD/Sites/Planiweb/backend/src/Planiweb/ModelBundle/Resources/config/validation.yml',
             ),
             'validator.translation_domain' => 'validators',
             'fragment.listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\FragmentListener',

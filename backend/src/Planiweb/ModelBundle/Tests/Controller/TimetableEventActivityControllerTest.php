@@ -17,19 +17,16 @@ class TimetableEventActivityControllerTest extends Tests\ModelTestCase
 
         //fill with entity data
         $entityData = array(
-            "activity" => $activity->getId(),
+            "activity" => array("id" => "". $activity->getId()),
             "start_time" => DefaultTestValues::Get("DateTime"),
             "end_time" => DefaultTestValues::Get("DateTime"),
-            "timetable_event" => $event->getId()
+            "timetable_event" => array("id" => "". $event->getId())
         );
 
         //fill with updated entity data
-        $updatedEntityData = array(
-            "activity" => $activity->getId(),
-            "start_time" => "1986-05-08T00:00:00O",
-            "end_time" => DefaultTestValues::Get("DateTime"),
-            "timetable_event" => $event->getId()
-        );
+        $updatedEntityData = $entityData;
+        $updatedEntityData["start_time"] = "1986-05-08T00:00:00O";
+
 
         //resource name used in urls
         $resourceName = "timetable_event_activity";
@@ -51,6 +48,8 @@ class TimetableEventActivityControllerTest extends Tests\ModelTestCase
             '/' . $resourceName . '/create',
             $entityData
         );
+
+        //echo $response->getContent();
 
         $entityId = json_decode($response->getContent(), true)["id"];
         $this->assertEquals('200', $response->getStatusCode());

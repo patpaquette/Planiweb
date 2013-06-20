@@ -141,6 +141,18 @@ class User extends \Planiweb\ModelBundle\Entity\User implements \Doctrine\ORM\Pr
         return parent::getComments();
     }
 
+    public function addComment(\Planiweb\ModelBundle\Entity\UserComment $comments)
+    {
+        $this->__load();
+        return parent::addComment($comments);
+    }
+
+    public function removeComment(\Planiweb\ModelBundle\Entity\UserComment $comments)
+    {
+        $this->__load();
+        return parent::removeComment($comments);
+    }
+
 
     public function __sleep()
     {

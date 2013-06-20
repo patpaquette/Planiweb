@@ -29,12 +29,27 @@ class TimetableEventInstanceActivity
     protected $activity;
 
     /**
-     * @var Planiweb\ModelBundle\Entity\TimetableEvent $timetableEvent
+     * @var datetime $start_time
      *
-     * @ORM\ManyToOne(targetEntity="TimetableEvent")
+     * @ORM\Column(type="datetime")
+     */
+    protected $start_time;
+
+    /**
+     * @var datetime $end_time
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $end_time;
+
+    /**
+     * @var Planiweb\ModelBundle\Entity\TimetableEvent $timetable_event_instance
+     *
+     * @ORM\ManyToOne(targetEntity="TimetableEventInstance")
      */
 
-    protected $timetableEvent;
+    protected $timetable_event_instance;
+    
     /**
      * Get id
      *
@@ -64,6 +79,47 @@ class TimetableEventInstanceActivity
     {
         return $this->activity;
     }
+
+    /**
+     * Set start_time
+     *
+     * @param datetime $startTime
+     */
+    public function setStartTime($startTime)
+    {
+        $this->start_time = $startTime;
+    }
+
+    /**
+     * Get start_time
+     *
+     * @return datetime 
+     */
+    public function getStartTime()
+    {
+        return $this->start_time;
+    }
+
+    /**
+     * Set end_time
+     *
+     * @param datetime $endTime
+     */
+    public function setEndTime($endTime)
+    {
+        $this->end_time = $endTime;
+    }
+
+    /**
+     * Get end_time
+     *
+     * @return datetime 
+     */
+    public function getEndTime()
+    {
+        return $this->end_time;
+    }
+
 
     /**
      * Set event

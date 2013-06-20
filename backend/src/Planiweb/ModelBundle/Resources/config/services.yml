@@ -1,11 +1,12 @@
 parameters:
 #    planiweb_model.example.class: Planiweb\ModelBundle\Example
-    validator.mapping.loader.yaml_files_loader.mapping_files:
-        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/HumanEntityInfo.yml"
-        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/Student.yml"
-        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/Course.yml"
-        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/CourseActivity.yml"
-        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/TimetableEvent.yml"
+#    validator.mapping.loader.yaml_files_loader.mapping_files:
+#        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/HumanEntityInfo.yml"
+#        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/Student.yml"
+#        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/Course.yml"
+#        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/CourseActivity.yml"
+#        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/TimetableEvent.yml"
+#        - "%kernel.root_dir%/../src/Planiweb/ModelBundle/Resources/config/validation/TimetableEventActivity.yml"
 services:
 #    planiweb_model.example:
 #        class: %planiweb_model.example.class%
